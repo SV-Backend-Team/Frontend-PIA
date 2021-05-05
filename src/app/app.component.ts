@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.employeeService.findall().then(
+    this.employeeService.GetEmployees().then(
       res => {
         this.employees = res;
       },
@@ -69,8 +69,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  search() {
-    this.employeeService.find(this.employeeID).then(
+  searchemployee() {
+    this.employeeService.GetEmployeeByID(this.employeeID).then(
       res => {
         this.employee = res;
       },
@@ -80,10 +80,10 @@ export class AppComponent implements OnInit {
     );
   }
 
-  save() {
+  saveemployee() {
     var employee: Employee = this.employeeForm.value;
     console.log(employee);
-    this.employeeService.create(employee).then(
+    this.employeeService.CreateEmployee(employee).then(
       res => {
         this.employee = res;
       },
@@ -93,8 +93,8 @@ export class AppComponent implements OnInit {
     )
   }
 
-  delete() {
-    this.employeeService.delete(this.employeeID).then(
+  deleteemployee() {
+    this.employeeService.DeleteEmployeeByID(this.employeeID).then(
       res => {
         this.employee = res;
       },

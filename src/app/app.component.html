@@ -43,7 +43,7 @@
 <h3>Buscar Empleado</h3>
 <form>
   <input type="text" placeholder="Employee ID" [(ngModel)]="employeeID" [ngModelOptions]="{standalone: true}">
-  <input type="button" value="Search" (click)="search()">
+  <input type="button" value="Search" (click)="searchemployee()">
   <h4>Employee Info</h4>
   <table border="1">
     <tr>
@@ -88,7 +88,7 @@
 </form>
 
 <h3>Add Employee</h3>
-<form [formGroup]="employeeForm" (ngSubmit)="save()">
+<form [formGroup]="employeeForm" (ngSubmit)="saveemployee()">
   <table>
     <tr>
       <td>Name</td>
@@ -108,7 +108,7 @@
 <h3>Delete Empleado</h3>
 <form>
   <input type="text" placeholder="Employee ID" [(ngModel)]="employeeID" [ngModelOptions]="{standalone: true}">
-  <input type="button" value="Delete" (click)="delete()">
+  <input type="button" value="Delete" (click)="deleteemployee()">
 </form>
 
 <router-outlet></router-outlet>

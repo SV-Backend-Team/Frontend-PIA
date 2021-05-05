@@ -10,26 +10,26 @@ export class EmployeeService{
         private httpClient: HttpClient
     ){}
 
-    findall(){
-        return this.httpClient.get(this.BASE_URL + "findall")
+    GetEmployees(){
+        return this.httpClient.get(this.BASE_URL + "getemployees")
                     .toPromise()
                     .then(res => res as Employee[])
     }
 
-    find(id: number){
-        return this.httpClient.get(this.BASE_URL + "search/" + id)
+    GetEmployeeByID(id: number){
+        return this.httpClient.get(this.BASE_URL + "getemployee/" + id)
                     .toPromise()
                     .then(res => res as Employee)
     }
 
-    create(employee: Employee){
-        return this.httpClient.post(this.BASE_URL + "create", employee)
+    CreateEmployee(employee: Employee){
+        return this.httpClient.post(this.BASE_URL + "createemployee", employee)
                     .toPromise()
                     .then(res => res as Employee)
     }
 
-    delete(id: number){
-        return this.httpClient.delete(this.BASE_URL + "delete/" + id)
+    DeleteEmployeeByID(id: number){
+        return this.httpClient.delete(this.BASE_URL + "deleteemployee/" + id)
                     .toPromise()
                     .then(res => res as Employee)
     }
