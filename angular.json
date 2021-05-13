@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tarea4"
+    }
+  },
+  "defaultProject": "tarea4",
+  "cli": {
+    "analytics": false
+  }
 }

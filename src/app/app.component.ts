@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Employee } from './entities/employee.entity';
 import { EmployeeService } from './services/employee.service';
 
@@ -10,10 +10,10 @@ import { EmployeeService } from './services/employee.service';
 })
 export class AppComponent implements OnInit {
 
-  employees: Employee[];
-  employeeID: number = undefined;
-  employee: Employee;
-  employeeForm: FormGroup
+  @Input() employees: Employee[];
+  @Input() employeeID: number = undefined;
+  @Input() employee: Employee;
+  @Input() employeeForm: FormGroup
 
   constructor(
     private employeeService: EmployeeService,
@@ -51,8 +51,8 @@ export class AppComponent implements OnInit {
     }
 
     this.employeeForm = this.formBuilder.group({
-      LastName: '',
-      FirstName: '',
+      Lastname: new FormControl(''),
+      Firstname: new FormControl(''),
       /*Title: 'Maneger',
       TitleOfCourtesy: 'Dr.',
       BirthDate: null,
