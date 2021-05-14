@@ -11,8 +11,11 @@ import { EmployeeService } from './services/employee.service';
 export class AppComponent implements OnInit {
 
   @Input() employees: Employee[];
-  @Input() employeeID: number = undefined;
-  @Input() employee: Employee;
+  @Input() employeeID_sel: number = undefined;
+  @Input() employeeID_del: number = undefined;
+  @Input() created_succesfully: number = 0;
+  @Input() deleted_succesfully: number = 0;
+  @Input() employee: Employee = null;
   @Input() employeeForm: FormGroup
 
   constructor(
@@ -21,14 +24,7 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.employeeService.GetEmployees().then(
-      res => {
-        this.employees = res;
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this.searchemployees()
 
     this.employee = {
       EmployeeID: 0,
@@ -68,9 +64,20 @@ export class AppComponent implements OnInit {
       PhotoPath: null*/
     });
   }
+  
+  searchemployees() {
+    this.employeeService.GetEmployees().then(
+      res => {
+        this.employees = res;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 
   searchemployee() {
-    this.employeeService.GetEmployeeByID(this.employeeID).then(
+    this.employeeService.GetEmployeeByID(this.employeeID_sel).then(
       res => {
         this.employee = res;
       },
@@ -85,20 +92,24 @@ export class AppComponent implements OnInit {
     console.log(employee);
     this.employeeService.CreateEmployee(employee).then(
       res => {
-        this.employee = res;
+        this.created_succesfully = 1;
+        this.searchemployees()
       },
       error => {
+        this.created_succesfully = -1;
         console.log(error);
       }
     )
   }
 
   deleteemployee() {
-    this.employeeService.DeleteEmployeeByID(this.employeeID).then(
+    this.employeeService.DeleteEmployeeByID(this.employeeID_del).then(
       res => {
-        this.employee = res;
+        this.deleted_succesfully = 1
+        this.searchemployees()
       },
       error => {
+        this.deleted_succesfully = -1
         console.log(error);
       }
     );
