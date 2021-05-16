@@ -1,0 +1,94 @@
+<h3>Employee List</h3>
+<table border="1">
+  <tr>
+    <th>CustomerID</th>
+    <th>CompanyName</th>
+    <th>ContactName</th>
+    <th>ContactTitle</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Region</th>
+    <th>PostalCode</th>
+    <th>Country</th>
+    <th>Phone</th>
+    <th>Fax</th>
+  </tr>
+  <tr *ngFor="let customer of customers">
+    <td>{{customer.CustomerID}}</td>
+    <td>{{customer.CompanyName}}</td>
+    <td>{{customer.ContactName}}</td>
+    <td>{{customer.ContactTitle}}</td>
+    <td>{{customer.Address}}</td>
+    <td>{{customer.City}}</td>
+    <td>{{customer.Region}}</td>
+    <td>{{customer.PostalCode}}</td>
+    <td>{{customer.Country}}</td>
+    <td>{{customer.Phone}}</td>
+    <td>{{customer.Fax}}</td>
+  </tr>
+</table>
+
+<h3>Buscar Empleado</h3>
+<form>
+  <input type="text" placeholder="Employee ID" [(ngModel)]="customerID_sel" [ngModelOptions]="{standalone: true}">
+  <input type="button" value="Search" (click)="searchcustomer()">
+  <h4>Employee Info</h4>
+  <table border="1">
+    <tr>
+      <th>CustomerID</th>
+      <th>CompanyName</th>
+      <th>ContactName</th>
+      <th>ContactTitle</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Region</th>
+      <th>PostalCode</th>
+      <th>Country</th>
+      <th>Phone</th>
+      <th>Fax</th>
+    </tr>
+    <tr>
+      <td>{{customer.CustomerID}}</td>
+      <td>{{customer.CompanyName}}</td>
+      <td>{{customer.ContactName}}</td>
+      <td>{{customer.ContactTitle}}</td>
+      <td>{{customer.Address}}</td>
+      <td>{{customer.City}}</td>
+      <td>{{customer.Region}}</td>
+      <td>{{customer.PostalCode}}</td>
+      <td>{{customer.Country}}</td>
+      <td>{{customer.Phone}}</td>
+      <td>{{customer.Fax}}</td>
+    </tr>
+  </table>
+</form>
+
+<h3>Add Employee</h3>
+<form [formGroup]="customerForm" (ngSubmit)="savecustomer()">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" formControlName="Firstname"></td>
+    </tr>
+    <tr>
+      <td>Surname</td>
+      <td><input type="text" formControlName="Lastname"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" value="Save"></td>
+    </tr>
+  </table>
+</form>
+<p *ngIf="created_succesfully === 1">Empleado creado satisfactoriamente</p>
+<p *ngIf="created_succesfully === -1">Ocurrió un error</p>
+
+<h3>Delete Empleado</h3>
+<form>
+  <input type="text" placeholder="Customer ID" [(ngModel)]="customerID_del" [ngModelOptions]="{standalone: true}">
+  <input type="button" value="Delete" (click)="deletecustomer()">
+</form>
+<p *ngIf="deleted_succesfully === 1">Empleado eliminado satisfactoriamente</p>
+<p *ngIf="deleted_succesfully === -1">Ocurrió un error</p>
+
+<router-outlet></router-outlet>
