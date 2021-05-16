@@ -65,7 +65,7 @@
       <th>ReportsTo</th>
       <th>PhotoPath</th>
     </tr>
-    <tr>
+    <tr *ngIf="employee !== null">
       <td>{{employee.EmployeeID}}</td>
       <td>{{employee.LastName}}</td>
       <td>{{employee.FirstName}}</td>

@@ -49,19 +49,6 @@ export class EmployeesComponent implements OnInit {
     this.employeeForm = this.formBuilder.group({
       Lastname: new FormControl(''),
       Firstname: new FormControl(''),
-      /*Title: 'Maneger',
-      TitleOfCourtesy: 'Dr.',
-      BirthDate: null,
-      HireDate: null,
-      Address: '991 Hello Kitty Street',
-      City: 'Mexico',
-      Region: 'Mexico',
-      PostalCode: '99999',
-      Country: 'MX',
-      HomePhone: '911',
-      Extension: null,
-      Notes: null,
-      PhotoPath: null*/
     });
   }
   

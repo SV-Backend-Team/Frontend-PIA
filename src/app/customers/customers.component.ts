@@ -24,19 +24,19 @@ export class CustomersComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log("Init")
     this.searchcustomers()
-    console.log("search")
+    
     this.customerForm = this.formBuilder.group({
+      CustomerID: new FormControl(''),
       CompanyName: new FormControl(''),
       ContactName: new FormControl(''),
     });
-    console.log("end init")
   }
   
   searchcustomers() {
     this.customerService.GetCustomers().then(
       res => {
+        console.log(res)
         this.customers = res;
       },
       error => {
