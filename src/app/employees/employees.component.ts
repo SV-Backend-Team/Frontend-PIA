@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Employee } from 'src/app/entities/employee.entity';
 import { EmployeeService } from 'src/app/services/employee.service';
 
@@ -11,12 +11,14 @@ import { EmployeeService } from 'src/app/services/employee.service';
 export class EmployeesComponent implements OnInit {
 
   @Input() employees: Employee[];
-  @Input() employeeID_sel: number = undefined;
-  @Input() employeeID_del: number = undefined;
+  @Input() employeeID_sel: string = undefined;
+  @Input() employeeID_del: string = undefined;
   @Input() created_succesfully: number = 0;
   @Input() deleted_succesfully: number = 0;
+  @Input() updated_succesfully: number = 0;
   @Input() employee: Employee = null;
   @Input() employeeForm: FormGroup
+  @Input() updateEmployeeForm: FormGroup
 
   constructor(
     private employeeService: EmployeeService,
@@ -27,7 +29,7 @@ export class EmployeesComponent implements OnInit {
     this.searchemployees()
 
     this.employee = {
-      EmployeeID: 0,
+      EmployeeID: '',
       LastName: '',
       FirstName: '',
       Title: '',
@@ -47,6 +49,12 @@ export class EmployeesComponent implements OnInit {
     }
 
     this.employeeForm = this.formBuilder.group({
+      Lastname: new FormControl(''),
+      Firstname: new FormControl(''),
+    });
+
+    this.updateEmployeeForm = this.formBuilder.group({
+      EmployeeID: new FormControl(''),
       Lastname: new FormControl(''),
       Firstname: new FormControl(''),
     });
@@ -100,5 +108,20 @@ export class EmployeesComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  updateemployee() {
+    var employee: Employee = this.updateEmployeeForm.value;
+    console.log(employee);
+    this.employeeService.UpdateEmployee(employee).then(
+      res => {
+        this.updated_succesfully = 1;
+        this.searchemployees()
+      },
+      error => {
+        this.updated_succesfully = -1;
+        console.log(error);
+      }
+    )
   }
 }

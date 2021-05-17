@@ -33,4 +33,10 @@ export class CustomerService{
                     .toPromise()
                     .then(res => res as Customer)
     }
+
+    UpdateCustomer(customer: Customer){
+        return this.httpClient.put(this.BASE_URL + "updatecustomer", customer)
+                    .toPromise()
+                    .then(res => res as Customer)
+    }
 }

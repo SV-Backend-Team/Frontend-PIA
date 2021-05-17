@@ -16,7 +16,7 @@ export class EmployeeService{
                     .then(res => res as Employee[])
     }
 
-    GetEmployeeByID(id: number){
+    GetEmployeeByID(id: string){
         return this.httpClient.get(this.BASE_URL + "getemployee/" + id)
                     .toPromise()
                     .then(res => res as Employee)
@@ -28,8 +28,14 @@ export class EmployeeService{
                     .then(res => res as Employee)
     }
 
-    DeleteEmployeeByID(id: number){
+    DeleteEmployeeByID(id: string){
         return this.httpClient.delete(this.BASE_URL + "deleteemployee/" + id)
+                    .toPromise()
+                    .then(res => res as Employee)
+    }
+
+    UpdateEmployee(employee: Employee){
+        return this.httpClient.put(this.BASE_URL + "updateemployee", employee)
                     .toPromise()
                     .then(res => res as Employee)
     }
