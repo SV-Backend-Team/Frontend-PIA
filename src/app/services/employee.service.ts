@@ -33,4 +33,10 @@ export class EmployeeService{
                     .toPromise()
                     .then(res => res as Employee)
     }
+
+    UpdateEmployee(employee: Employee){
+        return this.httpClient.put(this.BASE_URL + "updateemployee", employee)
+                    .toPromise()
+                    .then(res => res as Employee)
+    }
 }

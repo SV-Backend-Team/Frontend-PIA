@@ -94,4 +94,29 @@
 <p *ngIf="deleted_succesfully === 1">Cliente eliminado satisfactoriamente</p>
 <p *ngIf="deleted_succesfully === -1">Ocurrió un error</p>
 
+<h3>Update Customer</h3>
+<form [formGroup]="updateCustomerForm" (ngSubmit)="updatecustomer()">
+  <table>
+    <tr>
+      <td>ID</td>
+      <td><input type="text" formControlName="CustomerID"></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" formControlName="CompanyName"></td>
+    </tr>
+    <tr>
+      <td>Surname</td>
+      <td><input type="text" formControlName="ContactName"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" value="Save"></td>
+    </tr>
+  </table>
+</form>
+<p *ngIf="updated_succesfully === 1">Customer actualizado satisfactoriamente</p>
+<p *ngIf="updated_succesfully === -1">Ocurrió un error</p>
+
+
 <router-outlet></router-outlet>

@@ -15,8 +15,10 @@ export class CustomersComponent implements OnInit {
   @Input() customerID_del: string = undefined;
   @Input() created_succesfully: number = 0;
   @Input() deleted_succesfully: number = 0;
+  @Input() updated_succesfully: number = 0;
   @Input() customer: Customer = null;
   @Input() customerForm: FormGroup
+  @Input() updateCustomerForm: FormGroup
 
   constructor(
     private customerService: CustomerService,
@@ -27,6 +29,12 @@ export class CustomersComponent implements OnInit {
     this.searchcustomers()
     
     this.customerForm = this.formBuilder.group({
+      CustomerID: new FormControl(''),
+      CompanyName: new FormControl(''),
+      ContactName: new FormControl(''),
+    });
+
+    this.updateCustomerForm = this.formBuilder.group({
       CustomerID: new FormControl(''),
       CompanyName: new FormControl(''),
       ContactName: new FormControl(''),
@@ -84,4 +92,18 @@ export class CustomersComponent implements OnInit {
     );
   }
 
+  updatecustomer() {
+    var customer: Customer = this.updateCustomerForm.value;
+    console.log(customer);
+    this.customerService.UpdateCustomer(customer).then(
+      res => {
+        this.updated_succesfully = 1;
+        this.searchcustomers()
+      },
+      error => {
+        this.updated_succesfully = -1;
+        console.log(error);
+      }
+    )
+  }
 }
