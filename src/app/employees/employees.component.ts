@@ -55,7 +55,7 @@ export class EmployeesComponent implements OnInit {
     });
 
     this.updateEmployeeForm = this.formBuilder.group({
-      EmployeeID: new FormControl(0, [Validators.required]),
+      EmployeeID: new FormControl(''),
       Lastname: new FormControl(''),
       Firstname: new FormControl(''),
     });
@@ -114,10 +114,7 @@ export class EmployeesComponent implements OnInit {
   updateemployee() {
     var employee: Employee = this.updateEmployeeForm.value;
     employee.EmployeeID = parseInt(this.updateEmployeeForm.value.EmployeeID)
-    console.log(this.updateEmployeeForm.getRawValue());
-    console.log(this.updateEmployeeForm.value);
-    console.log( this.updateEmployeeForm.value);
-
+    
     this.employeeService.UpdateEmployee(employee).then(
       res => {
         this.updated_succesfully = 1;
