@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { parse } from 'node:path';
 import { Employee } from 'src/app/entities/employee.entity';
 import { EmployeeService } from 'src/app/services/employee.service';
 
