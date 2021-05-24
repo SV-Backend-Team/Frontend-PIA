@@ -1,27 +1,44 @@
-# Tarea4
+# PIA-Frontend
+## Equipo
+ - Sebastian Terrazas Santillana 1847317
+ - Vicente Garza Reyna           1847176
+## Requisitos 
+### Backend
+* GO 
+* Microsoft SQL Server Management Studio 18 
+*	SQL Server 2019 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+### Frontend
+*	Angular
 
-## Development server
+## Backend
+Para ver como instalar el Backend y sus requisitos ir al siguiente [enlace](https://github.com/SV-Backend-Team/API-PIA).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##Instalaciones de Requisitos de Frontend
+1.	Para instalar el Angular abrir la Consola mediante tecleando cmd en la barra de búsqueda si en Windows y teclear lo siguiente:
+```
+npm install -g @angular/cli 
+```
+Nota: Para más información puede ver el siguiente [enlace](https://angular.io/cli).
+2.	Una vez instalado es recomendado tener Visual Studio Code para poder editar código para descargarlo vaya al siguiente [enlace](https://code.visualstudio.com/) y para ver como instalarlo ir al siguiente [enlace](https://www.youtube.com/watch?v=MlIzFUI1QGA).
 
-## Code scaffolding
+##Instalación y Run del Programa 
+Frontend 
+1.	Para descargar el Frontend ir a el siguiente [enlace](https://github.com/SV-Backend-Team/Frontend-PIA.git).
+a.	Si se tiene la Consola Git hacer Git Bash en un lugar donde se desea descargar y escribir el siguiente comando:
+```
+git clone https://github.com/SV-Backend-Team/API-PIA.git 
+```
+b.	Si no se tiene ambos Visual Studio y/o la Consola Git se puede descargar el repositorio como un Zip 
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/54513488/119378761-3d97de00-bc84-11eb-905b-07c4c993ed6c.png">
+</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2.	Una vez descargado abrir la consola si en Windows “cmd” e ir a donde este instalado el Frontend y teclear el siguiente comando:
+```
+npm install o npm update
+```
+3.	Una vez terminada la instalación correr el siguiente comando:
+```
+ng serve
+```
