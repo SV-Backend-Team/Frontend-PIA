@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    font-size: 1em; 
+    background-color: #cfc;
+    font-family: sans-serif;
+}
+
+
+.content{
+    text-align: center;
+    width: 70%;
+    margin: 30px auto;       /* Fixed alignment error */
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.button-area{
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    width: 30%;
+    margin: 30px auto;       /* Fixed alignment error */
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.button {
+    background-color: #ddd;
+    border: 0px;
+    color: #000;
+    padding: 10px;
+    margin: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.table-container {
+    display: inline-block;
+    overflow-y: scroll;
+    max-height: 400px;
+    overflow-x: scroll;
+    max-width: 85%;
+}
+
+.table-container table {
+    text-align: center;
+    margin:  auto;
+}
+
+form table{
+    margin: auto;
+}
+
+form table th{
+    text-align: right;
+}
+
+form table td{
+    text-align: left;
+}
+
+form table input[type=text], input[type=password]{
+    width:100%;
+    box-sizing:border-box;
+}
+
+form input[type=text], input[type=password]{
+    width:30%;
+    box-sizing:border-box;
+}
