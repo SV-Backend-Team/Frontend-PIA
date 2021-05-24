@@ -19,7 +19,8 @@ Para ver como instalar el Backend y sus requisitos ir al siguiente [enlace](http
 ```
 npm install -g @angular/cli 
 ```
-Nota: Para más información puede ver el siguiente [enlace](https://angular.io/cli).
+Nota: Para más información puede ver el siguiente [enlace](https://angular.io/cli). 
+
 2.	Una vez instalado es recomendado tener Visual Studio Code para poder editar código para descargarlo vaya al siguiente [enlace](https://code.visualstudio.com/) y para ver como instalarlo ir al siguiente [enlace](https://www.youtube.com/watch?v=MlIzFUI1QGA).
 
 ## Instalación y Run del Programa 
