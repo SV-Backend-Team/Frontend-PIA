@@ -5,8 +5,8 @@
 ## Requisitos 
 ### Backend
 * GO 
-* Microsoft SQL Server Management Studio 18 
-*	SQL Server 2019 
+* TDM-GCC-64 
+*	SQLite 
 
 ### Frontend
 *	Angular
@@ -25,7 +25,7 @@ Nota: Para más información puede ver el siguiente [enlace](https://angular.io/
 
 ## Instalación y Run del Programa 
 Frontend 
-1.	Para descargar el Frontend ir a el siguiente [enlace](https://github.com/SV-Backend-Team/Frontend-PIA.git).
+1.	Para descargar el Frontend ir a el siguiente [enlace](https://github.com/SV-Backend-Team/Frontend-PIA.git). \
 a.	Si se tiene la Consola Git hacer Git Bash en un lugar donde se desea descargar y escribir el siguiente comando:
 ```
 git clone https://github.com/SV-Backend-Team/API-PIA.git 
@@ -43,3 +43,6 @@ npm install o npm update
 ```
 ng serve
 ```
+
+## Probar la Aplicación
+Para ver la aplicación en acción vaya al siguiente link http://pia-dwbe.ddns.net
