@@ -16,7 +16,7 @@ export class CustomerService{
         this.configService.getURL() + ":" +
         this.configService.getPort() + "/api/customer/";
     
-    private token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHAiOiJBcHBGcm9udGVuZCJ9.53oano-2uC7HBOwHz-BKj3Gu8XmomtJEbuQ_Bpwrp1Q";
+    private token = this.configService.getToken();
     private header = {
         headers: {
             "Authorization": `Bearer ${this.token}`
