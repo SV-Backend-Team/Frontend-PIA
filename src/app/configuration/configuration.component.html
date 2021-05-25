@@ -1,0 +1,18 @@
+
+<h3>Configure URL and Port</h3>
+<form [formGroup]="configForm" (ngSubmit)="saveconfig()">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" formControlName="URL"></td>
+    </tr>
+    <tr>
+      <td>Surname</td>
+      <td><input type="text" formControlName="Port"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" value="Save"></td>
+    </tr>
+  </table>
+</form>

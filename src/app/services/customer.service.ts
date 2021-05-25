@@ -1,21 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core'
+import { ConfigurationComponent } from '../configuration/configuration.component';
 import { Customer } from '../entities/customer.entity';
+import { ConfigService } from './config.service';
 
 @Injectable()
 export class CustomerService{
 
-    private BASE_URL: string = "http://192.168.1.2:5000/api/customer/";
+    constructor(
+        private configService: ConfigService,
+        private httpClient: HttpClient
+    ) { }
+    
+    private BASE_URL: string = "http://" +
+        this.configService.getURL() + ":" +
+        this.configService.getPort() + "/api/customer/";
+    
     private token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHAiOiJBcHBGcm9udGVuZCJ9.53oano-2uC7HBOwHz-BKj3Gu8XmomtJEbuQ_Bpwrp1Q";
     private header = {
         headers: {
             "Authorization": `Bearer ${this.token}`
         }
     };
-
-    constructor(
-        private httpClient: HttpClient
-    ){}
 
     GetCustomers(){
         return this.httpClient.get(this.BASE_URL + "getcustomers", this.header)

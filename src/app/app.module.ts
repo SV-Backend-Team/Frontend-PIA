@@ -10,6 +10,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { HomeComponent } from './home/home.component';
 import { CustomerService } from './services/customer.service';
+import { ConfigurationComponent } from './configuration/configuration.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CustomerService } from './services/customer.service';
     AppComponent,
     CustomersComponent,
     EmployeesComponent,
-    HomeComponent
+    HomeComponent,
+    ConfigurationComponent
   ],
   imports: [
     BrowserModule,
