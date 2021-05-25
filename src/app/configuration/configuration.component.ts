@@ -32,6 +32,7 @@ export class ConfigurationComponent implements OnInit {
       this.configForm.value.URL,
       this.configForm.value.Port
     )
+    alert("Changes saved correctly")
   }
 
 }
