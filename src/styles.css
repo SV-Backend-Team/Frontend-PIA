@@ -2,7 +2,7 @@
 
 body{
     font-size: 1em; 
-    background-color: #cfc;
+    background-color: rgb(115, 192, 255);
     font-family: sans-serif;
 }
 
@@ -11,7 +11,7 @@ body{
     text-align: center;
     width: 70%;
     margin: 30px auto;       /* Fixed alignment error */
-    background-color: #fff;
+    background-color: rgb(235, 235, 235);
     padding: 20px 30px;
     border-radius: 10px;
 }
@@ -22,13 +22,13 @@ body{
     margin: 0px;
     width: 30%;
     margin: 30px auto;       /* Fixed alignment error */
-    background-color: #fff;
+    background-color: rgb(235, 235, 235);
     padding: 20px 30px;
     border-radius: 10px;
 }
 
 .button {
-    background-color: #ddd;
+    background-color: rgb(199, 199, 199);
     border: 0px;
     color: #000;
     padding: 10px;
