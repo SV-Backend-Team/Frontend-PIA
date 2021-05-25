@@ -5,7 +5,7 @@ import { Employee } from '../entities/employee.entity';
 @Injectable()
 export class EmployeeService{
 
-    private BASE_URL: string = "http://localhost:5000/api/employee/";
+    private BASE_URL: string = "http://192.168.1.2:5000/api/employee/";
     private token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHAiOiJBcHBGcm9udGVuZCJ9.53oano-2uC7HBOwHz-BKj3Gu8XmomtJEbuQ_Bpwrp1Q";
     private header = {
         headers: {
